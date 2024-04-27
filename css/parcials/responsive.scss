@@ -1,0 +1,102 @@
+@media screen and (max-width:1399px){
+    #banner-section{
+        .banner-wrapper{
+            .banner-left-content{
+                h1{
+                    font-size: 50px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:991px){
+    #banner-section{
+        .banner-wrapper{
+            .banner-left-content{
+                h5{
+                    font-size: 16px;
+                }
+                h1{
+                    font-size: 38px;
+                }
+                .btn-and-video{
+                    .btn-play{
+                        padding: 11px 15px 15px 20px;
+                        width: 15px;
+                        height: 24px;
+                        &::before{
+                            width: 45px;
+                            height: 45px;
+                        }
+                        .span{
+                            border-left: 14px solid #FFFFFF;
+                            border-top: 9px solid transparent;
+                            border-bottom: 8px solid transparent;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+                p{
+                    max-width: 340px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    #banner-section{
+        .banner-wrapper{
+            .row{
+                row-gap: 40px;
+                .banner-left-content{
+                    p{
+                        max-width: 100%;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:575px){
+    #banner-section{
+        .banner-wrapper{
+            .row{
+                row-gap: 40px;
+                .banner-left-content{
+                    h1{
+                        font-size: 35px;
+                    }
+                    p{
+                        max-width: 100%;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:340px){
+    #banner-section{
+        .banner-wrapper{
+            .row{
+                row-gap: 40px;
+                .banner-left-content{
+                    font-size: 15px;
+                    h1{
+                        font-size: 28px;
+                    }
+                    p{
+                        max-width: 100%;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

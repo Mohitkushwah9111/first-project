@@ -1,0 +1,186 @@
+header {
+    width: 100%;
+    box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    @media screen and (max-width:767px){
+        &.sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            padding: 15px 0 !important;
+            background-color: #f5efef;
+    
+            nav {
+                ul {
+                    @media screen and (max-width:767px) {
+                        top: 66px;
+                    }
+                }
+            }
+        }
+    }
+
+    .logo {
+        h2 {
+            background-color: $secondary-color;
+            display: inline-block;
+            text-align: center;
+            margin-right: 16px;
+        }
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: end;
+
+        ul {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            margin: 0;
+            column-gap: 30px;
+
+            @media screen and (max-width:991px) {
+                column-gap: 20px;
+            }
+
+            @media screen and (max-width:767px) {
+                position: fixed;
+                top: 84px;
+                border-top: 1px solid #ddd;
+                left: 0;
+                right: 0;
+                visibility: hidden;
+                opacity: 0;
+                justify-content: flex-start;
+                padding: 20px 15px 35px;
+                flex-direction: column;
+                align-items: flex-start;
+                row-gap: 15px;
+                background-color: $secondary-color;
+                transform: scale(0);
+                transition: all ease-in-out 0.5s;
+            }
+
+            li {
+                a {
+                    font-size: $regular-size;
+                    font-weight: $font-weight-semibold;
+                    line-height: $x-large-height;
+                    color: $primary-heading-color;
+                    transition: all ease-in-out 0.4s;
+
+                    @media screen and (max-width:991px) {
+                        font-size: $small-size;
+                    }
+
+                    &:hover {
+                        color: $secondary-color;
+
+                        @media screen and (max-width:767px) {
+                            color: $white-color;
+                        }
+                    }
+                }
+
+                a.active {
+                    color: $secondary-color;
+
+                    @media screen and (max-width:767px) {
+                        color: $primary-heading-color;
+
+                        &:hover {
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-icon {
+            display: none;
+            width: 24px;
+            height: 18px;
+            position: relative;
+            cursor: pointer;
+
+            @media screen and (max-width:767px) {
+                display: block;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 1.5px;
+                background-color: $secondary-color;
+                top: 0;
+                transition: all ease-in-out 0.5s;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $secondary-color;
+                bottom: 0;
+                transition: all ease-in-out 0.5s;
+            }
+
+            span {
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                height: 1.5px;
+                background-color: $secondary-color;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: all ease-in-out 0.4s;
+            }
+        }
+    }
+}
+
+body {
+    &.open-menu {
+        .navigation-bar {
+            visibility: visible;
+            opacity: 1;
+            transform: scale(1);
+            z-index: 999;
+        }
+
+        .menu-icon {
+            span {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            &::after {
+                transform: rotate(45deg) translateY(-50%);
+                top: 50%;
+                background-color: red;
+                opacity: 0.9;
+            }
+
+            &::before {
+                transform: rotate(135deg) translateY(-50%);
+                top: 50%;
+                background-color: red;
+                opacity: 0.9;
+            }
+        }
+    }
+}
